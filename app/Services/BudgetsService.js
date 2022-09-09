@@ -6,15 +6,6 @@ import { saveState } from "../Utils/Store.js";
 
 
 class BudgetsService {
-  ifPurchased(id) {
-    let budget = appState.budgets.find(budget => budget.id == id)
-
-    // @ts-ignore
-    budget.purchased = !budget.purchased
-
-    appState.emit('budgets')
-    saveState('budgets', appState.budgets)
-  }
 
   createBudget(formData) {
     let budget = new Budget(formData)
@@ -23,7 +14,14 @@ class BudgetsService {
     saveState('budgets', appState.budgets)
 
   }
-
+  
+  removeBudget(id) {
+    let budgets = appState.budgets
+    let budgetId = budgets.findIndex(budget => id == budget.id)
+    console.log("removing budget: " + budgetId)
+    appState.budgets.splice(budgetId, 1)
+    saveState('budgets', appState.budgets)
+  }
 }
 
 export const budgetsService = new BudgetsService()

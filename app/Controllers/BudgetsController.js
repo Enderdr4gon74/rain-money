@@ -32,10 +32,12 @@ export class BudgetsController {
     }
   }
 
-  ifPurchased(id) {
-    budgetsService.ifPurchased(id)
-
+  removeBudget(id) {
+    try {
+      budgetsService.removeBudget(id)
+      _drawBudgets()
+    } catch (error) {
+      console.error('[REMOVE_SOURCE]', error);
+    }
   }
-
-
 }

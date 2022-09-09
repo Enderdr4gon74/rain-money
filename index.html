@@ -12,6 +12,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/6.9.96/css/materialdesignicons.min.css">
   <title>rain-money</title>
 </head>
 
@@ -69,12 +70,16 @@
     <div class="offcanvas-body">
       <form onsubmit="app.sourcesController.createSources()">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="income" placeholder="Name">
+          <input type="text" class="form-control" name="income" placeholder="Name" required>
           <label for="income">Income Source</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="number" step="0.01" class="form-control" name="amount" placeholder="Amount">
+          <input type="number" step="0.01" class="form-control" name="amount" placeholder="Amount" required>
           <label for="amount">Amount</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" name="budgetName" placeholder="Budget Name" required>
+          <label for="budgetName">Budget Name</label>
         </div>
         <div class="d-flex justify-content-between align-items-center">
           <button class="btn" type="reset">Cancel</button>
@@ -92,11 +97,11 @@
     <div class="offcanvas-body">
       <form onsubmit="app.budgetsController.createBudget()">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="name" placeholder="Name">
+          <input type="text" class="form-control" name="name" placeholder="Name" required>
           <label for="name">Name</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="number" step="0.01" class="form-control" name="price" placeholder="Price">
+          <input type="number" step="0.01" class="form-control" name="price" placeholder="Price" required>
           <label for="price">Price</label>
         </div>
         <div class="d-flex justify-content-between align-items-center">
